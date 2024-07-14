@@ -135,6 +135,7 @@ Any slotted `menu` should provide
 three buttons, with the following attributes:
 
 - `track-part=play` - _play/pause_ button
+  - currently requires nested `<btn-icon` and `<btn-text>` elements
 - `track-part=prev` - _previous track_
 - `track-part=next` - _next track_
 

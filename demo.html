@@ -7,6 +7,63 @@
     <title>track-list Web Component Demo</title>
 
     <script type="module" src="track-list.js"></script>
+
+    <style>
+      audio[controls] {
+        border-radius: 1lh;
+        display: block;
+        inline-size: 100%;
+      }
+
+      [aria-current=true] {
+        color: mediumvioletred;
+        audio { box-shadow: 0 0 3px; }
+      }
+
+      figcaption {
+        * { margin: 0; }
+      }
+
+      @layer reset, base;
+
+      @layer base {
+        body {
+          --text-small: clamp(0.938rem, 0.824rem + 0.568cqi, 1.25rem);
+          --text-normal: clamp(1.25rem, 1.023rem + 1.136cqi, 1.875rem);
+          --text-large: clamp(1.35rem, 0.818rem + 2.659cqi, 2.813rem);
+          --text-xlarge: clamp(1.7rem, 0.784rem + 4.58cqi, 4.219rem);
+          --gap: clamp(12px, 0rem + 3.75cqi, 24px);
+          font-size: var(--text-normal);
+          padding: var(--gap);
+        }
+      }
+
+      @layer reset {
+        * { box-sizing: border-box; }
+        html { block-size: 100%; }
+
+        body {
+          margin: unset;
+          min-block-size: 100%;
+        }
+
+        img,
+        svg {
+          display: block;
+          max-inline-size: 100%;
+        }
+
+        picture { display: contents; }
+
+        input,
+        button,
+        textarea,
+        select {
+          font: inherit;
+        }
+      }
+
+    </style>
   </head>
   <body>
     <h1>&lt;track-list> Web Component</h1>
@@ -20,6 +77,10 @@
       <li>Playlist play/pause button</li>
       <li>Buttons for previous/next track</li>
     </ul>
+    <p>
+      Source available
+      <a href="https://github.com/mirisuzanne/track-list">on github</a>.
+    </p>
     <hr>
 
     <h2>General usage example</h2>
