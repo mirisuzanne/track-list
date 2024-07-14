@@ -1,33 +1,35 @@
 {
-  "name": "@daviddarnes/component-name",
+  "name": "@mirisuzanne/track-list",
   "version": "1.0.0",
-  "description": "A Web Component for…",
-  "main": "component-name.js",
+  "description": "A Web Component for enhancing a list of audio tracks",
+  "main": "track-list.js",
   "scripts": {
     "start": "npx http-server ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/daviddarnes/component-name.git"
+    "url": "git+https://github.com/mirisuzanne/track-list.git"
   },
   "keywords": [
     "web",
     "component",
     "components",
     "web components",
-    "custom elements"
+    "custom elements",
+    "audio",
+    "playlist"
   ],
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "bugs": {
-    "url": "https://github.com/daviddarnes/component-name/issues"
+    "url": "https://github.com/mirisuzanne/track-list/issues"
   },
   "author": {
-    "name": "David Darnes",
-    "email": "me@daviddarnes.com",
-    "url": "https://darn.es/"
+    "name": "Miriam Suzanne",
+    "email": "miriam@oddbird.net",
+    "url": "https://miriamsuzanne.com/"
   },
-  "homepage": "https://github.com/daviddarnes/component-name#readme"
+  "homepage": "https://github.com/mirisuzanne/track-list#readme"
 }

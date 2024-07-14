@@ -3,37 +3,95 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Demo of component-name Web Component" />
-    <title>component-name Web Component Demo</title>
+    <meta name="description" content="Demo of track-list Web Component" />
+    <title>track-list Web Component Demo</title>
 
-    <script type="module" src="component-name.js"></script>
+    <script type="module" src="track-list.js"></script>
   </head>
   <body>
+    <h1>&lt;track-list> Web Component</h1>
+    <p>
+      Enhances a list of audio elements,
+      with playlist controls:
+    </p>
+    <ul>
+      <li>Only one track plays at a time</li>
+      <li>When one track finishes, the next one plays</li>
+      <li>Playlist play/pause button</li>
+      <li>Buttons for previous/next track</li>
+    </ul>
+    <hr>
+
     <h2>General usage example</h2>
-    <component-name>
-      <button>Button</button>
-    </component-name>
+    <figure>
+      <figcaption>
+        <h3>The Holes They Leave</h3>
+        <p>
+          <a href="https://teacupgorilla.com">Teacup Gorilla</a>,
+          <time>2015</time>
+        </p>
+      </figcaption>
+      <track-list>
+        <ol slot="tracks">
+          <li>
+            <strong>Last Bullet</strong>
+            <audio controls src="https://www.dropbox.com/scl/fi/p1z45eo48yh74vzpe85ka/Teacup-Gorilla-01-Last-Bullet.mp3?dl=1"></audio>
+          </li>
+          <li aria-current="true">
+            <strong>Just Like That</strong>
+            <audio controls src="https://www.dropbox.com/scl/fi/pnkcauncu9fzh2vbwq5tb/Teacup-Gorilla-02-Just-Like-That.mp3?dl=1"></audio>
+          </li>
+          <li>
+            <strong>I'm Not Ready to Go (yet)</strong>
+            <audio controls src="https://www.dropbox.com/scl/fi/9lgkpz6pzl8zfs8otujrv/Teacup-Gorilla-03-I-m-Not-Ready-To-Go-Yet.mp3?dl=1"></audio>
+          </li>
+          <li>
+            <strong>Suicide Note</strong>
+            <audio controls src="https://www.dropbox.com/scl/fi/w4hbwqg3727on3kb4z9lu/Teacup-Gorilla-04-Suicide-Note.mp3?dl=1"></audio>
+          </li>
+          <li>
+            <strong>Pig Sez</strong>
+            <em>(some words from C.A. Conrad)</em>
+            <audio controls src="https://www.dropbox.com/scl/fi/95i61o8hg0818fh9lbk4n/Teacup-Gorilla-05-Pig-Sez.mp3?dl=1"></audio>
+          </li>
+        </ol>
+      </track-list>
+    </figure>
     <hr />
-    <h2>Example using a fallback method</h2>
-    <component-name>
-      <button>Button</button>
-      <a href="#">Anchor</a>
-    </component-name>
-    <style>
-      component-name:not(:defined) button,
-      component-name:defined a {
-        display: none;
-      }
-    </style>
-    <hr />
-    <h2>Example using options or additional fallback method</h2>
-    <component-name attribute="value">
-      <button>Button</button>
-    </component-name>
-    <style>
-      component-name[attribute="value"] {
-        outline: 1px solid red;
-      }
-    </style>
+    <h2>The fallback is individual tracks</h2>
+    <figure>
+      <figcaption>
+        <h3>The Holes They Leave</h3>
+        <p>
+          <a href="https://teacupgorilla.com">Teacup Gorilla</a>,
+          <time>2015</time>
+        </p>
+      </figcaption>
+      <not-a-track-list>
+        <ol>
+          <li>
+            <strong>Last Bullet</strong>
+            <audio controls src="https://www.dropbox.com/scl/fi/p1z45eo48yh74vzpe85ka/Teacup-Gorilla-01-Last-Bullet.mp3?dl=1"></audio>
+          </li>
+          <li aria-current="true">
+            <strong>Just Like That</strong>
+            <audio controls src="https://www.dropbox.com/scl/fi/pnkcauncu9fzh2vbwq5tb/Teacup-Gorilla-02-Just-Like-That.mp3?dl=1"></audio>
+          </li>
+          <li>
+            <strong>I'm Not Ready to Go (yet)</strong>
+            <audio controls src="https://www.dropbox.com/scl/fi/9lgkpz6pzl8zfs8otujrv/Teacup-Gorilla-03-I-m-Not-Ready-To-Go-Yet.mp3?dl=1"></audio>
+          </li>
+          <li>
+            <strong>Suicide Note</strong>
+            <audio controls src="https://www.dropbox.com/scl/fi/w4hbwqg3727on3kb4z9lu/Teacup-Gorilla-04-Suicide-Note.mp3?dl=1"></audio>
+          </li>
+          <li>
+            <strong>Pig Sez</strong>
+            <em>(some words from C.A. Conrad)</em>
+            <audio controls src="https://www.dropbox.com/scl/fi/95i61o8hg0818fh9lbk4n/Teacup-Gorilla-05-Pig-Sez.mp3?dl=1"></audio>
+          </li>
+        </ol>
+      </not-a-track-list>
+    </figure>
   </body>
 </html>
