@@ -1,5 +1,10 @@
 # Changes
 
+## v1.1.0 - unreleased
+
+- provide built-in WebC component
+- Correct links to npm package
+
 ## v1.0.1 - 2024-07-14
 
 - Set package to `@terriblemia/track-list`

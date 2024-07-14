@@ -63,7 +63,7 @@ without any additional controls.
 
 You have a few options (choose one of these):
 
-1. Install via [npm](https://www.npmjs.com/package/@mirisuzanne/track-list): `npm install @mirisuzanne/track-list`
+1. Install via [npm](https://www.npmjs.com/package/@terriblemia/track-list): `npm install @terriblemia/track-list`
 1. [Download the source manually from GitHub](https://github.com/mirisuzanne/track-list/releases) into your project.
 1. Skip this step and use the script directly via a 3rd party CDN (not recommended for production use)
 
@@ -80,7 +80,7 @@ Make sure you include the `<script>` in your project (choose one of these):
 <!-- 3rd party CDN, not recommended for production use -->
 <script
   type="module"
-  src="https://www.unpkg.com/@mirisuzanne/track-list@1.0.0/track-list.js"
+  src="https://www.unpkg.com/@terriblemia/track-list@1.0.0/track-list.js"
 ></script>
 ```
 
@@ -88,8 +88,26 @@ Make sure you include the `<script>` in your project (choose one of these):
 <!-- 3rd party CDN, not recommended for production use -->
 <script
   type="module"
-  src="https://esm.sh/@mirisuzanne/track-list@1.0.0"
+  src="https://esm.sh/@terriblemia/track-list@1.0.0"
 ></script>
+```
+
+Or use the built in
+[WebC](https://www.11ty.dev/docs/languages/webc/) component
+with [Eleventy](https://www.11ty.dev/docs/),
+by adding `"npm:@terriblemia/track-list/*.webc"`
+to the Eleventy WebC Plugin `components` registry:
+
+```js
+// Only one module.exports per configuration file, please!
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(eleventyWebcPlugin, {
+    components: [
+      // Add as a global WebC component
+      "npm:@11ty/track-list/*.webc",
+    ],
+  });
+}
 ```
 
 ### Style hooks
