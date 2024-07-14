@@ -1,6 +1,6 @@
 # Changes
 
-## v1.1.0 - unreleased
+## v1.1.1 - 2024-07-14
 
 - provide built-in WebC component
 - Correct links to npm package
