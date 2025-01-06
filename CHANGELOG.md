@@ -1,5 +1,10 @@
 # Changes
 
+## v1.2.0 - 2025-01-06
+
+- Allow list-items without any audio
+  (only list-items with audio will be treated as tracks)
+
 ## v1.1.1 - 2024-07-14
 
 - provide built-in WebC component
