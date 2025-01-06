@@ -59,7 +59,7 @@ class TrackList extends HTMLElement {
   }
 
   #trackList;
-  tracks;
+  tracks = [];
   menu;
   playBtn;
   #playIcon;
@@ -112,15 +112,19 @@ class TrackList extends HTMLElement {
   }
 
   get prevTrack() {
-    const track = this.currentTrack.previousElementSibling;
-    if (track) track.audio = track.querySelector('audio');
-    return track;
+    return this.relativeTrack(-1);
   }
 
   get nextTrack() {
-    const track = this.currentTrack.nextElementSibling;
-    if (track) track.audio = track.querySelector('audio');
-    return track;
+    return this.relativeTrack(1);
+  }
+
+  relativeTrack = (move) => {
+    const currentNumber = [...this.tracks].indexOf(this.currentTrack);
+    const moveTo = currentNumber + move;
+    return moveTo < 0
+      ? null
+      : [...this.tracks].at(moveTo);
   }
 
   toPrev = () => {
@@ -217,19 +221,17 @@ class TrackList extends HTMLElement {
 
   #trackSetup = () => {
     this.#trackList = this.querySelector('[slot=tracks]');
-    this.tracks = this.#trackList.querySelectorAll('li');
+    const audioList = this.#trackList.querySelectorAll('audio');
 
-    this.tracks.forEach((track) => {
-      track.audio = track.querySelector('audio');
-
-      if (!track.audio) {
-        console.error('Track is missing audio');
-        return;
-      }
+    audioList.forEach((item) => {
+      const track = item.closest('li');
+      track.audio = item;
 
       track.audio.addEventListener('play', this.#trackOnPlay);
       track.audio.addEventListener('pause', this.#trackOnPause);
       track.audio.addEventListener('ended', this.#trackOnEnded);
+
+      this.tracks.push(track);
     });
 
     this.currentTrack = this.currentTrack;
@@ -262,8 +264,7 @@ class TrackList extends HTMLElement {
     }
   };
 
-  #trackOnEnded = (event) => {
-    const track = event.currentTarget;
+  #trackOnEnded = () => {
     const upNext = this.nextTrack;
 
     if (upNext) {

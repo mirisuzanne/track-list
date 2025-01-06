@@ -4,7 +4,7 @@
   "description": "A Web Component for enhancing a list of audio tracks",
   "main": "track-list.js",
   "scripts": {
-    "start": "npx http-server ."
+    "serve": "npx http-server ."
   },
   "repository": {
     "type": "git",
